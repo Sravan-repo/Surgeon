@@ -3,7 +3,7 @@
 @import "tailwindcss";
 
 
-*{
+/* *{
     font-family: Outfit;
 }
 .active hr{
@@ -17,4 +17,4 @@
     .active p{
         @apply text-white bg-amber-500
     }
-}
+} */
