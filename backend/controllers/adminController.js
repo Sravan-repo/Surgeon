@@ -66,7 +66,7 @@ const addDoctor = async (req, res) => {
             date: Date.now(),
             image: imageUrl
         }
-
+ 
         const newDoctor = new doctorModel(doctorData);
         await newDoctor.save();
         res.status(200).json({ success: true, message: "Doctor added successfully", doctor: newDoctor });

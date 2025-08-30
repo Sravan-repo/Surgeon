@@ -6,7 +6,6 @@ import Student3 from '../assets/Student3.jpg';
 import Student4 from '../assets/Student4.jpg';
 import Student5 from '../assets/Student5.jpg';
 import Student6 from '../assets/Student6.jpg';
-import Student7 from '../assets/Student7.jpg';
 import Student8 from '../assets/Student8.jpg';
 
 
@@ -19,8 +18,8 @@ const images = [
   Student4,
   Student5,
   Student6,
-  Student7,
   Student8,
+  Student6,
   Student,
   Student1,
   Student2,
