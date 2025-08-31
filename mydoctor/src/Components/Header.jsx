@@ -20,7 +20,7 @@ const Header = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setBgIdx((idx) => (idx + 1) % bgImages.length);
-    }, 2000); 
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -30,33 +30,37 @@ const Header = () => {
       style={{
         backgroundImage: bgImages[bgIdx],
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center bottom', // Align background image position to bottom center
         width: '100vw',
         marginLeft: 'calc(-50vw + 50%)',
-        transition: 'background-image 2s ease-in-out'
+        transition: 'background-image 2s ease-in-out',
       }}
     >
-      {/* <div className='flex md:flex-row w-full md:px-10 lg:px-20'>
-        <div className='md:w-1/2 flex flex-col justify-center items-start text-black gap-5 py-10 m-auto md:py-[10vw] md:mb-[-30px]'>
-          <p className='text-xl md:text-4xl lg:text-2xl text-black font-semibold leading-tight md:leading-tight lg:leading-tight'>
+      {/* Overlay to darken background for better text visibility */}
+      <div className="w-full h-full flex items-end justify-center px-4 md:px-10 lg:px-20">
+        <div className="max-w-4xl text-center text-white mb-8">
+          <p className="text-lg md:text-3xl lg:text-4xl font-semibold leading-tight mb-6">
             Book Appointment with trusted counsellors
           </p>
-          <div className='flex flex-col md:flex-row items-center gap-3 text-black text-sm font-semibold'>
-            <img className='w-28' src={group_profiles} alt='' />
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-sm font-semibold">
+            <img className="w-24 md:w-28" src={group_profiles} alt="" />
             <p>
-              We are here to help you to fulfill your dreams & <br className='hidden sm:block' />
+              We are here to help you to fulfill your dreams & <br className="hidden sm:block" />
               Schedule your appointment at earliest with our best counsellors
             </p>
           </div>
-          <a href="#speciality" className='flex items-center gap-2 bg-white px-8 py-3 rounded-full text-black
-           text-size-sm m-auto md:m-0 hover:scale-105 transition-all duration-300'>
+          <a
+            href="/login"
+            className="inline-flex items-center gap-2 bg-white px-8 py-3 rounded-full text-black text-sm mt-6 hover:scale-105 transition-transform duration-300"
+          >
             Book appointment
-            <img className='w-3' src={arrow_icon} alt='' />
+            <img className="w-3" src={arrow_icon} alt="" />
           </a>
         </div>
-      </div> */}
+      </div>
     </div>
-  )
-}
+  );
+};
+
 
 export default Header

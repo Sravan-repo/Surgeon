@@ -14,7 +14,7 @@ const Home = () => {
       <Header />
       <Common />
       <TopUniversities />
-      <Documents />
+      {/* <Documents /> */}
       <Banner />
       <SpecialityMenu />
       <TopDoctors />

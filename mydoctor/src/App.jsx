@@ -23,7 +23,7 @@ import Testimonials from './Pages/Testimonials'
 import Login from './Pages/Login'
 import MyProfile from './Pages/MyProfile'
 import MyAppointments from './Pages/MyAppointments'
-import Documents from './Components/Documents'
+// import Documents from './Components/Documents'
 import Appointment from './Pages/Appointment'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
@@ -53,7 +53,7 @@ const App = () => {
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/documents' element={<Documents />} />
+        {/* <Route path='/documents' element={<Documents />} /> */}
         <Route path='/common' element={<Common />} />
         <Route path='/login' element={<Login />} />
         <Route path='/my-profile' element={<MyProfile />} />

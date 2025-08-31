@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import doc6 from '../assets/doc6.png';
 import doc7 from '../assets/doc7.png';
 import doc8 from '../assets/doc8.png';
-import doc9 from '../assets/doc9.png'; 
+import doc9 from '../assets/doc9.png';
 
 // Replace these with your actual images
 const testimonials = [
@@ -30,7 +30,7 @@ const testimonials = [
     image: doc9,
     text: "My dreams came true! I wanted to study MBBS in Georgia, but I was unable to complete my application due to proper guidance. The team of Reddy consultancy guided me well and helped me study MBBS in Ivane Javakhishvili Tbilisi State University."
   },
-    {
+  {
     name: "Harsh Gautam",
     state: "Haryana",
     image: doc8,
@@ -73,54 +73,84 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-16 px-4 md:px-16 mb-5">
-      <div className="flex flex-col items-center">
-        {/* Centered Header */}
-        <div className="bg-white px-10 py-8 mb-8">
-          <h2 className="text-3xl font-bold text-center mb-2">What Our Students Say</h2>
-          <p className="text-center text-gray-700 text-sm font-medium">Listen to our successfully<br />Placed Students</p>
+    <div className="py-16 px-4 sm:px-6 md:px-16 mb-10">
+      <div className="flex flex-col items-center max-w-6xl mx-auto">
+        {/* Header */}
+        <div className=" px-6 sm:px-10 py-4 mb-8 w-full max-w-md sm:max-w-xl text-center">
+          <h2 className="text-2xl font-semibold mb-2 text-gray-900">What Our Students Say</h2>
+          <p className="text-gray-600 text-sm font-small leading-relaxed">
+            Listen to our successfully Placed Students
+          </p>
         </div>
 
-        {/* Carousel Controls and Cards */}
+        {/* Carousel */}
         <div className="relative w-full flex items-center justify-center">
           {/* Left Arrow */}
           <button
             onClick={handlePrev}
-            className="absolute left-[-50px] z-10 bg-white rounded-full shadow p-2 hover:bg-gray-100 transition hidden md:block"
+            className="absolute left-[-40px] z-10 p-2 hover:bg-gray-100 transition hidden md:flex items-center justify-center"
             aria-label="Previous"
           >
-            <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M15 19l-7-7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              className="stroke-current"
+            >
+              <path
+                d="M15 19l-7-7 7-7"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
-          {/* Cards */}
-          <div className="flex flex-row space-x-6">
+
+          {/* Cards container */}
+          <div className="flex space-x-2 sm:space-x-6 overflow-x-auto px-2 sm:px-6">
             {getVisibleTestimonials().map((t, idx) => (
               <div
                 key={idx}
-                className="bg-white shadow-xl w-[325px] overflow-hidden hover:scale-105 transition-all duration-300"
+                className=" overflow-hidden hover:scale-105 transition-transform duration-300 flex-shrink-0
+                      w-[250px] sm:w-[280px] md:w-[320px]"
               >
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="w-full h-60 object-cover"
+                  className="w-[full] h-[full] sm:h-56 md:h-60 object-cover"
+                  loading="lazy"
                 />
-                <div className="p-5">
-                  <div className="flex justify-between items-baseline mb-1">
-                    <span className="text-md font-semibold">{t.name}</span>
+                <div className="p-4 sm:p-5">
+                  <div className="flex justify-between mb-2">
+                    <span className="text-lg font-semibold text-gray-800 truncate">{t.name}</span>
                     <span className="italic text-gray-500 text-xs">{t.state}</span>
                   </div>
-                  <p className="text-gray-700 text-sm">{t.text}</p>
+                  <p className="text-gray-700 text-sm ">{t.text}</p>
                 </div>
               </div>
             ))}
           </div>
+
           {/* Right Arrow */}
           <button
             onClick={handleNext}
-            className="absolute right-[-50px] z-10 bg-white rounded-full shadow p-2 hover:bg-gray-100 transition hidden md:block"
+            className="absolute right-[-40px] z-10 p-2 hover:bg-gray-100 transition hidden md:flex items-center justify-center"
             aria-label="Next"
           >
-            <svg width="24" height="24" fill="none" stroke="currentColor">
-              <path d="M9 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              className="stroke-current"
+            >
+              <path
+                d="M9 5l7 7-7 7"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
         </div>
